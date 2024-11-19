@@ -1,106 +1,46 @@
-## Run on boot
+## Code to automate
 
-Your code needs to run as soon as the Raspberry Pi starts up. 
-
-You can control what programs run when the system boots with `systemd`.
-
-**Note** `systemd` is only available from Jessie versions of the Raspbian OS.
+If you do not have a Python script you would like to use, then this one will play a sound.
 
 --- task ---
 
-Open Terminal and type:
-
-```bash
-sudo nano /lib/systemd/system/tripwire.service
-```
+Download this sound file: <a href="resources/start.mp3" download>start.mp3</a>
 
 --- /task ---
 
 --- task ---
 
-Define a new unit called 'Laser Tripwire' and set it to run after the multi-user environment is available. 
+Move the sound file to your `/home/username/` folder.
 
-```bash
-[Unit]
-Description=Laser Tripwire
-After=multi-user.target
-```
+**Note**: Change `username` to your username!
 
 --- /task ---
 
 --- task ---
-
-Configure the service.
-
-Set the `Type` to 'idle' so the 'ExecStart' command runs only when everything else has loaded.
-
-Set the `ExecStart` parameter to the command to run.
-
-```bash
-[Unit]
-Description=Laser Tripwire
-After=multi-user.target
-
-[Service]
-Type=idle
-ExecStart=/usr/bin/python3 /home/username/tripwire.py
-```
-
-**Note** Replace `username` with your username!
-
+Open Thonny.
 --- /task ---
 
 --- task ---
+Add this code.
 
-Add a `WantedBy` directive set to 'multi-user.target', so a directory called multi-user.target.wants is created within /etc/systemd/system (if not already available) and a symbolic link to the your unit is placed within. Disabling your unit removes the link and the dependency relationship.
+```python
+import pygame
+import time
 
-```bash
-[Unit]
-Description=Laser Tripwire
-After=multi-user.target
+time.sleep(3)
+pygame.init()
+my_sound = pygame.mixer.Sound('/home/username/start.mp3')
 
-[Service]
-Type=idle
-ExecStart=/usr/bin/python3 /home/username/tripwire.py
+my_sound.play()
 
-[Install]
-WantedBy=multi-user.target
+while pygame.mixer.get_busy():
+    time.sleep(0.1)
 ```
+**Note**: Change `username` to your username.
 --- /task ---
 
 --- task ---
+Save the Python file to `/home/username/start.py` 
 
-Save and exit nano by pressing `Ctrl + x` and then typing `y` when you are prompted to save.
-
---- /task ---
-
---- task ---
-
-Set the permission on the unit file to `644`.
-
-```bash
-sudo chmod 644 /lib/systemd/system/tripwire.service
-```
-
---- /task ---
-
---- task ---
-
-Tell systemd to start your unit file during the boot sequence.
-
-```bash
-sudo systemctl daemon-reload
-sudo systemctl enable tripwire.service
-```
-
---- /task ---
-
---- task ---
-
-**Test**: Reboot your Raspberry Pi to check your service runs.
-
-```bash
-sudo reboot
-```
-
+**Note**: Change `username` to your username.
 --- /task ---
