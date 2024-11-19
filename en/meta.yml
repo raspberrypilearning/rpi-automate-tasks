@@ -1,4 +1,4 @@
-title: default-project-template
+title: Automate tasks
 hero_image: images/banner.png
 description: default-project-template description
 version: 1
@@ -6,6 +6,6 @@ listed: false
 copyedit: false
 last_tested: "2025-01-01"
 steps:
-  - title: What you will make
-  - title: Step title
+  - title: What you will do
+  - title: Run on boot
   - title: What can you do now?

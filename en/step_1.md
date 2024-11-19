@@ -1,8 +1,6 @@
-## What you will make
-OR
-## What you will do - change meta if you use this
+## What you will do
 
-A brief description - one or two sentences. 
+Learn to run tasks on boot or at scheduled times. 
 
 --- print-only ---
 ![ALT TEXT](images/IMAGE.png)
