@@ -80,7 +80,7 @@ Save and exit nano by pressing `Ctrl + x` and then press `y` and `Enter` when yo
 
 --- task ---
 
-Tell systemd to start your unit file during the boot sequence.
+Tell systemd to enable your new service.
 
 ```bash
 sudo systemctl daemon-reload
@@ -97,7 +97,7 @@ Make sure your headphones or speakers are connected to your Raspberry Pi.
 
 --- task ---
 
-**Test**: Reboot your Raspberry Pi to check your service runs.
+**Test**: your service runs when you reboot your Raspberry Pi.
 
 ```bash
 sudo reboot
