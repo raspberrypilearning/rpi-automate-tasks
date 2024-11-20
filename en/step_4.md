@@ -1,4 +1,4 @@
-## Run on a schedule
+## Run on a schedule
 
 Use a systemd timer to play your cheerful sound every hour.
 
