@@ -18,11 +18,11 @@ sudo nano /etc/systemd/system/cheerful.service
 
 Define a new unit 
 
-Set the `Description` to 'Greeting Sound' and set it to run after the multi-user environment is available. 
+Set the `Description` to 'Cheerful Sound' and set it to run after the multi-user environment is available. 
 
 ```bash
 [Unit]
-Description=Greeting Sound
+Description=Cheerful Sound
 After=multi-user.target
 ```
 
@@ -40,12 +40,12 @@ Configure the service.
 
 ```bash
 [Unit]
-Description=Greeting Sound
+Description=Cheerful Sound
 After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /home/username/start.py
+ExecStart=/usr/bin/python3 /home/username/cheerful.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 ```
 
@@ -59,12 +59,12 @@ Add a `WantedBy` directive set to 'multi-user.target', so a directory called mul
 
 ```bash
 [Unit]
-Description=Greeting Sound
+Description=Cheerful Sound
 After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /home/username/start.py
+ExecStart=/usr/bin/python3 /home/username/cheerful.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
 [Install]

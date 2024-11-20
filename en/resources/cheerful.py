@@ -3,7 +3,7 @@ import time
 
 time.sleep(3)
 pygame.init()
-my_sound = pygame.mixer.Sound('/home/username/start.mp3')  # Change `username` to your username
+my_sound = pygame.mixer.Sound('/home/username/cheerful.mp3')  # Change `username` to your username
 
 my_sound.play()
 

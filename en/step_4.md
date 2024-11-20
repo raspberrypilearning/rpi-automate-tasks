@@ -1,6 +1,6 @@
 ## Run on a schedule
 
-Use a systemd timer to run your greeting.service every hour.
+Use a systemd timer to play your cheerful sound every hour.
 
 --- task ---
 

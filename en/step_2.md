@@ -2,13 +2,13 @@
 
 --- task ---
 
-Download this sound file: <a href="resources/start.mp3" download>start.mp3</a>
+Download this sound file: <a href="resources/cheerful.mp3" download>cheerful.mp3</a>
 
 --- /task ---
 
 --- task ---
 
-Download this Python script: <a href="resources/cheerful.py" download>start.py</a>
+Download this Python script: <a href="resources/cheerful.py" download>cheerful.py</a>
 
 --- /task ---
 
