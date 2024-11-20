@@ -106,7 +106,7 @@ Change the value for OnCalendar so it runs on the hour:
 
 ```bash
 [Timer]
-`OnCalendar=hourly`
+OnCalendar=hourly
 ```
 
 --- /task ---
