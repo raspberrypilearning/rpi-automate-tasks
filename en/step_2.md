@@ -1,7 +1,5 @@
 ## Code to automate
 
-If you do not have a Python script you would like to use, then this one will play a sound.
-
 --- task ---
 
 Download this sound file: <a href="resources/start.mp3" download>start.mp3</a>
@@ -10,37 +8,38 @@ Download this sound file: <a href="resources/start.mp3" download>start.mp3</a>
 
 --- task ---
 
-Move the sound file to your `/home/username/` folder.
-
-**Note**: Change `username` to your username!
+Download this Python script: <a href="resources/cheerful.py" download>start.py</a>
 
 --- /task ---
 
 --- task ---
-Open Thonny.
---- /task ---
 
---- task ---
-Add this code.
+Open Terminal and type:
 
-```python
-import pygame
-import time
-
-time.sleep(3)
-pygame.init()
-my_sound = pygame.mixer.Sound('/home/username/start.mp3')
-
-my_sound.play()
-
-while pygame.mixer.get_busy():
-    time.sleep(0.1)
+```bash
+sudo nano /home/username/Downloads/cheerful.py
 ```
+
 **Note**: Change `username` to your username.
+
 --- /task ---
 
 --- task ---
-Save the Python file to `/home/username/start.py` 
+
+On line 6 of the Python script, change `username` to your username.
+
+--- /task ---
+
+--- task ---
+
+Save and exit nano by pressing `Ctrl + x` and then press `y` and `Enter` when you are prompted to save.
+
+--- /task ---
+
+--- task ---
+
+Move both files to your `/home/username/` folder.
 
 **Note**: Change `username` to your username.
+
 --- /task ---

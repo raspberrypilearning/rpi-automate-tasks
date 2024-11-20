@@ -9,7 +9,7 @@ You can use `systemd` to run your code when Raspberry Pi starts up.
 Open Terminal and type:
 
 ```bash
-sudo nano /lib/systemd/system/greeting.service
+sudo nano /etc/systemd/system/cheerful.service
 ```
 
 --- /task ---
@@ -49,7 +49,7 @@ ExecStart=/usr/bin/python3 /home/username/start.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 ```
 
-**Note** Replace `username` with your username!
+**Note**: Change `username` to your username.
 
 --- /task ---
 
@@ -67,7 +67,6 @@ Type=idle
 ExecStart=/usr/bin/python3 /home/username/start.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
-
 [Install]
 WantedBy=multi-user.target
 ```
@@ -75,17 +74,7 @@ WantedBy=multi-user.target
 
 --- task ---
 
-Save and exit nano by pressing `Ctrl + x` and then press `y` when you are prompted to save.
-
---- /task ---
-
---- task ---
-
-Set the permission on the unit file to `644`.
-
-```bash
-sudo chmod 644 /lib/systemd/system/greeting.service
-```
+Save and exit nano by pressing `Ctrl + x` and then press `y` and `Enter` when you are prompted to save.
 
 --- /task ---
 
@@ -95,8 +84,14 @@ Tell systemd to start your unit file during the boot sequence.
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable greeting.service
+sudo systemctl enable cheerful.service
 ```
+
+--- /task ---
+
+--- task ---
+
+Make sure your headphones or speakers are connected to your Raspberry Pi.
 
 --- /task ---
 
