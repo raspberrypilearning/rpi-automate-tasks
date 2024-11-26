@@ -9,7 +9,7 @@ You can use `systemd` to run your code when Raspberry Pi starts up.
 Open Terminal and type:
 
 ```bash
-sudo nano /etc/systemd/system/cheerful.service
+sudo nano /etc/systemd/system/cheerful_on_start.service
 ```
 
 --- /task ---
@@ -40,12 +40,12 @@ Configure the service.
 
 ```bash
 [Unit]
-Description=Cheerful Sound
+Description=Play cheerful sound on start
 After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /home/username/cheerful.py
+ExecStart=/usr/bin/python3 /home/username/play_cheerful.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 ```
 
@@ -55,16 +55,16 @@ Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
 --- task ---
 
-Add a `WantedBy` directive set to 'multi-user.target'. This creates a directory called multi-user.target.wants in /etc/systemd/system, with a link to the your unit. Disabling your unit removes the link and the dependency relationship.
+Add a `WantedBy` directive set to 'multi-user.target'. This creates a directory called multi-user.target.wants in /etc/systemd/system, with a link to the your unit. 
 
 ```bash
 [Unit]
-Description=Cheerful Sound
+Description=Play cheerful sound on start
 After=multi-user.target
 
 [Service]
 Type=idle
-ExecStart=/usr/bin/python3 /home/username/cheerful.py
+ExecStart=/usr/bin/python3 /home/username/play_cheerful.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
 [Install]
@@ -84,7 +84,16 @@ Tell systemd to enable your new service.
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable cheerful.service
+sudo systemctl enable cheerful_on_start.service
+```
+
+--- /task ---
+
+--- task ---
+
+You can check the status of your service using:
+```bash
+systemctl status cheerful_on_start.service
 ```
 
 --- /task ---
@@ -104,3 +113,13 @@ sudo reboot
 ```
 
 --- /task ---
+
+### Disable your service.
+
+If you don't want the sound to play every time your Pi starts up, you can disable it with:
+
+```bash
+sudo  systemctl disable cheerful_on_start.service
+```
+
+You will see that disabling your unit removes the link and the dependency relationship that indicates that the service should be started automatically.

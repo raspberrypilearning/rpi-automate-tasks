@@ -8,7 +8,7 @@ Download this sound file: <a href="resources/cheerful.mp3" download>cheerful.mp3
 
 --- task ---
 
-Download this Python script: <a href="resources/cheerful.py" download>cheerful.py</a>
+Download this Python script: <a href="resources/play_cheerful.py" download>cheerful.py</a>
 
 --- /task ---
 
@@ -17,7 +17,7 @@ Download this Python script: <a href="resources/cheerful.py" download>cheerful.p
 Open Terminal and type:
 
 ```bash
-sudo nano /home/username/Downloads/cheerful.py
+sudo nano /home/username/Downloads/play_cheerful.py
 ```
 
 **Note**: Change `username` to your username.

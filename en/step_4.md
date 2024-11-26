@@ -7,7 +7,7 @@ Use a systemd timer to play your cheerful sound every hour.
 Create the service file.
 
 ```bash
-sudo nano /etc/systemd/system/hourly.service
+sudo nano /etc/systemd/system/hourly_cheerful.service
 ```
 
 --- /task ---
@@ -21,7 +21,7 @@ Add this content:
 Description="Run Python script"
 
 [Service]
-ExecStart=/usr/bin/python3 /home/username/cheerful.py
+ExecStart=/usr/bin/python3 /home/username/play_cheerful.py
 Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 ```
 
@@ -45,7 +45,7 @@ Add this content:
 
 ```bash
 [Unit]
-Description="Run hourly.service on the hour, every hour"
+Description="Run hourly_cheerful.service on the hour, every hour"
 
 [Timer]
 OnCalendar=minutely
@@ -140,8 +140,16 @@ You should now hear your cheerful sound every hour.
 
 --- /task ---
 
+### Stopping and disabling the timer
+
 If you want to stop your timer, you can enter:
 
 ```bash
 sudo systemctl stop hourly.timer
+```
+
+If you want to disable the timer, you can use:
+
+```bash
+sudo systemctl disable hourly.timer
 ```
