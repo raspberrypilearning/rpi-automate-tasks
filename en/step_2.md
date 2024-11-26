@@ -2,22 +2,26 @@
 
 --- task ---
 
-Download this sound file: <a href="resources/cheerful.mp3" download>cheerful.mp3</a>
+[Download](https://rpf.io/p/en/rpi-automate-tasks-get){:target="_blank"} the sound file and Python script.
 
 --- /task ---
 
 --- task ---
 
-Download this Python script: <a href="resources/play_cheerful.py" download>cheerful.py</a>
-
---- /task ---
-
---- task ---
-
-Open Terminal and type:
+Open Terminal and extract the downloaded files:
 
 ```bash
-sudo nano /home/username/Downloads/play_cheerful.py
+sudo unzip /home/username/Downloads/rpi-automate-tasks-en-resources.zip -d /home/username/
+```
+
+**Note**: Change `username` to your username.
+
+--- task ---
+
+Open an editor.
+
+```bash
+sudo nano /home/username/play_cheerful.py
 ```
 
 **Note**: Change `username` to your username.
@@ -33,13 +37,5 @@ On line 6 of the Python script, change `username` to your username.
 --- task ---
 
 Save and exit nano by pressing `Ctrl + x` and then press `y` and `Enter` when you are prompted to save.
-
---- /task ---
-
---- task ---
-
-Move both files to your `/home/username/` folder.
-
-**Note**: Change `username` to your username.
 
 --- /task ---

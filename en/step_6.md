@@ -1,6 +1,6 @@
 ## What can you do now?
 
-Try our [Robotics](https://projects.raspberrypi.org/en/projects?interests%5B%5D=robotics) projects where you will build and control robot buggies.
+Try our [Robotics](https://projects.raspberrypi.org/en/projects?interests%5B%5D=robotics){:target="_blank"} projects where you will build and control robot buggies.
 
 --- print-only --- 
 
@@ -14,4 +14,4 @@ Try our [Robotics](https://projects.raspberrypi.org/en/projects?interests%5B%5D=
 
 --- /no-print ---
 
-Or try out another [Raspberry Pi project](https://projects.raspberrypi.org/en/projects?hardware[]=raspberry-pi)!
+Or try out another [Raspberry Pi project](https://projects.raspberrypi.org/en/projects?hardware[]=raspberry-pi){:target="_blank"}!
