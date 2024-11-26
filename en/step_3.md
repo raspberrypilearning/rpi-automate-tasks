@@ -2,7 +2,7 @@
 
 You can use `systemd` to run your code when Raspberry Pi starts up.
 
-**Note** `systemd` is only available from Jessie versions of the Raspbian OS.
+**Note** `systemd` is only available from Jessie versions of the Raspbian OS and onward.
 
 --- task ---
 
@@ -55,7 +55,7 @@ Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
 --- task ---
 
-Add a `WantedBy` directive set to 'multi-user.target', so a directory called multi-user.target.wants is created within /etc/systemd/system (if not already available) and a symbolic link to the your unit is placed within. Disabling your unit removes the link and the dependency relationship.
+Add a `WantedBy` directive set to 'multi-user.target'. This creates a directory called multi-user.target.wants in /etc/systemd/system, with a link to the your unit. Disabling your unit removes the link and the dependency relationship.
 
 ```bash
 [Unit]
