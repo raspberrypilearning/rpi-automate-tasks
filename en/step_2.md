@@ -2,7 +2,7 @@
 
 --- task ---
 
-[Download](https://rpf.io/p/en/rpi-automate-tasks-get){:target="_blank"} the sound file and Python script.
+[Download](https://rpf.io/p/en/rpi-automate-tasks-go){:target="_blank"} the sound file and Python script.
 
 --- /task ---
 
