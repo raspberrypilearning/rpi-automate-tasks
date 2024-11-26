@@ -16,9 +16,11 @@ sudo unzip /home/username/Downloads/rpi-automate-tasks-en-resources.zip -d /home
 
 **Note**: Change `username` to your username.
 
+--- /task ---
+
 --- task ---
 
-Open an editor.
+Open the Python file in an editor.
 
 ```bash
 sudo nano /home/username/play_cheerful.py
