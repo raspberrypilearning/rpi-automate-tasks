@@ -18,7 +18,7 @@ Add this content:
 
 ```bash
 [Unit]
-Description="Run Python script"
+Description=Run play_cheerful Python script
 
 [Service]
 ExecStart=/usr/bin/python3 /home/username/play_cheerful.py
@@ -34,8 +34,10 @@ Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 Create the timer file.
 
 ```bash
-sudo nano /etc/systemd/system/hourly.timer
+sudo nano /etc/systemd/system/hourly_cheerful.timer
 ```
+
+**Note** The filename (before the .timer extension) is the same as the service. This creates a link to the service.
 
 --- /task ---
 
@@ -45,7 +47,7 @@ Add this content:
 
 ```bash
 [Unit]
-Description="Run hourly_cheerful.service on the hour, every hour"
+Description=Run hourly_cheerful.service on the hour, every hour
 
 [Timer]
 OnCalendar=minutely
@@ -54,7 +56,17 @@ OnCalendar=minutely
 WantedBy=timers.target
 ```
 
-**Note**: This script uses `minutely` frequency so we can test it works easily. We will change the frequency later.
+**Notes**: 
+
+- This script uses `minutely` frequency so we can test it works easily. We will change the frequency later.
+
+- If you name the files differently (e.g., play_cheerful.service and hourly_cheerful.timer), you must explicitly specify the service name in the `[Timer]` section of the timer file using the `Unit=` directive:
+
+```bash
+[Timer]
+OnCalendar=minutely
+Unit=play_cheerful.service
+```
 
 --- /task ---
 
@@ -70,8 +82,8 @@ Tell systemd to start your timer during the boot sequence.
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable hourly.timer
-sudo systemctl start hourly.timer
+sudo systemctl enable hourly_cheerful.timer
+sudo systemctl start hourly_cheerful.timer
 ```
 
 --- /task ---
@@ -95,7 +107,7 @@ You should hear your cheerful sound every minute.
 Open the timer again.
 
 ```bash
-sudo nano /etc/systemd/system/hourly.timer
+sudo nano /etc/systemd/system/hourly_cheerful.timer
 ```
 
 --- /task ---
@@ -117,8 +129,8 @@ Reload, enable and start your timer.
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl enable hourly.timer
-sudo systemctl start hourly.timer
+sudo systemctl enable hourly_cheerful.timer
+sudo systemctl start hourly_cheerful.timer
 ```
 
 --- /task ---
@@ -126,6 +138,7 @@ sudo systemctl start hourly.timer
 --- task ---
 
 You can check your timer by using:
+
 ```bash
 systemctl list-timers --all
 ```
@@ -145,11 +158,11 @@ You should now hear your cheerful sound every hour.
 If you want to stop your timer, you can enter:
 
 ```bash
-sudo systemctl stop hourly.timer
+sudo systemctl stop hourly_cheerful.timer
 ```
 
 If you want to disable the timer, you can use:
 
 ```bash
-sudo systemctl disable hourly.timer
+sudo systemctl disable hourly_cheerful.timer
 ```

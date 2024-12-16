@@ -6,3 +6,5 @@ Completing this project does not alter anything else on your Raspberry Pi.
 
 ### You will need
 - Speakers or headphones
+
+If you do not have speakers or headphones, then you can try our [Automate tasks on your Raspberry Pi - LED](https://projects.raspberrypi.org/en/projects/rpi-automate-tasks-led/){:target="_blank"} project.

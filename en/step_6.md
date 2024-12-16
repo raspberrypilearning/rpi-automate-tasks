@@ -1,5 +1,9 @@
 ## What can you do now?
 
+Try our [Automate tasks on your Raspberry Pi - LED](https://projects.raspberrypi.org/en/projects/rpi-automate-tasks-led/){:target="_blank"} project.
+
+Create a Bash command to automate in our [Create a new command on Raspberry Pi](https://projects.raspberrypi.org/en/projects/raspberry-pi-command/){:target="_blank"} project.
+
 Try our [Robotics](https://projects.raspberrypi.org/en/projects?interests%5B%5D=robotics){:target="_blank"} projects where you will build and control robot buggies.
 
 --- print-only --- 

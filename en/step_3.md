@@ -22,7 +22,7 @@ Set the `Description` to 'Cheerful Sound' and set it to run after the multi-user
 
 ```bash
 [Unit]
-Description=Cheerful Sound
+Description=Cheerful Sound on start
 After=multi-user.target
 ```
 
@@ -40,7 +40,7 @@ Configure the service.
 
 ```bash
 [Unit]
-Description=Play cheerful sound on start
+Description=Cheerful Sound on start
 After=multi-user.target
 
 [Service]
@@ -55,11 +55,11 @@ Environment="PULSE_RUNTIME_PATH=/run/user/1000/pulse/"
 
 --- task ---
 
-Add a `WantedBy` directive set to 'multi-user.target'. This creates a directory called multi-user.target.wants in /etc/systemd/system, with a link to the your unit. 
+Add a `WantedBy` directive set to 'multi-user.target'. This creates a directory called multi-user.target.wants in /etc/systemd/system, with a link to your unit.
 
 ```bash
 [Unit]
-Description=Play cheerful sound on start
+Description=Cheerful Sound on start
 After=multi-user.target
 
 [Service]
@@ -80,7 +80,7 @@ Save and exit nano by pressing `Ctrl + x` and then press `y` and `Enter` when yo
 
 --- task ---
 
-Tell systemd to enable your new service.
+In Terminal, tell systemd to enable your new service.
 
 ```bash
 sudo systemctl daemon-reload
@@ -119,7 +119,7 @@ sudo reboot
 If you don't want the sound to play every time your Pi starts up, you can disable it with:
 
 ```bash
-sudo  systemctl disable cheerful_on_start.service
+sudo systemctl disable cheerful_on_start.service
 ```
 
 You will see that disabling your unit removes the link and the dependency relationship that indicates that the service should be started automatically.
