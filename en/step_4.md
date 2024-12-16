@@ -51,6 +51,7 @@ Description=Run hourly_cheerful.service on the hour, every hour
 
 [Timer]
 OnCalendar=minutely
+AccuracySec=1s
 
 [Install]
 WantedBy=timers.target
@@ -65,6 +66,7 @@ WantedBy=timers.target
 ```bash
 [Timer]
 OnCalendar=minutely
+AccuracySec=1s
 Unit=play_cheerful.service
 ```
 
